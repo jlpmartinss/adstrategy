@@ -8,69 +8,124 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header class="hero-section">
       <div class="hero-container">
         <!-- Texto à esquerda -->
-        <div class="hero-text">
-          <img src="./assets/logotipo-Speak-Up-School 1.png" alt="Logotipo" />
-          <h1>Quer aprender ou melhorar o seu inglês?</h1>
+        <div class="hero-left-container">
+          <div class="hero-text">
+            <img
+              src="./assets/logotipo-Speak-Up-School 1.png"
+              alt="Logotipo"
+              class="hero-logo"
+            />
+            <h1>Quer aprender ou melhorar o seu inglês?</h1>
+          </div>
+          <div class="badge-14-dias desktop-badge">
+            <img src="./assets/selo.png" alt="14 Dias Grátis" />
+          </div>
+
+          <!-- Badge para mobile -->
+          <div class="badge-14-dias mobile-badge">
+            <img src="./assets/selo.png" alt="14 Dias Grátis" />
+          </div>
         </div>
-        <!-- Formulário à direita -->
+        <!-- Formulário -->
         <div class="hero-form">
           <div class="card shadow custom-card">
             <h3 class="text-center mb-2">
               Obtenha Mais
               <span class="highlight"> Informações</span>
             </h3>
-            <form>
+
+            <form id="infoForm" novalidate>
+              <!-- Nome -->
               <div class="mb-2">
                 <input
                   type="text"
                   class="form-control custom-input"
+                  name="nome"
                   placeholder="Nome"
+                  required
+                  pattern="^[A-Za-zÀ-ÖÙ-öù-ÿ\s]+$"
+                  title="Apenas caracteres alfabéticos."
                 />
               </div>
+              <!-- Apelido -->
               <div class="mb-2">
                 <input
                   type="text"
                   class="form-control custom-input"
+                  name="apelido"
                   placeholder="Apelido"
+                  required
+                  pattern="^[A-Za-zÀ-ÖÙ-öù-ÿ\s]+$"
+                  title="Apenas caracteres alfabéticos."
                 />
               </div>
+              <!-- Idade (18-50) -->
               <div class="mb-2">
                 <input
                   type="number"
                   class="form-control custom-input"
+                  name="idade"
                   placeholder="Idade"
+                  required
+                  min="18"
+                  max="50"
+                  title="A idade deve estar entre 18 e 50 anos."
                 />
               </div>
+              <!-- Telefone -->
               <div class="mb-2">
                 <input
                   type="tel"
                   class="form-control custom-input"
+                  name="telefone"
                   placeholder="Telefone"
+                  required
+                  pattern="^(?:2\d{8}|9\d{8})$"
+                  title="Apenas telefones portugueses (9 dígitos, começando com 2 ou 9)."
                 />
               </div>
+              <!-- Email -->
               <div class="mb-2">
                 <input
                   type="email"
                   class="form-control custom-input"
+                  name="email"
                   placeholder="Email"
+                  required
+                  title="Insira um endereço de e-mail válido."
                 />
               </div>
+              <!-- Concelho -->
               <div class="mb-2">
                 <input
                   type="text"
                   class="form-control custom-input"
-                  placeholder="Conselho de Residência"
+                  name="concelho"
+                  placeholder="Concelho de Residência"
+                  required
+                  pattern="^[A-Za-zÀ-ÖÙ-öù-ÿ\s]+$"
+                  title="Apenas caracteres alfabéticos."
                 />
               </div>
               <div class="mb-2">
-                <select class="form-select custom-input">
+                <select
+                  class="form-select custom-input"
+                  name="nivelIngles"
+                  required
+                >
                   <option value="">Nível de Inglês</option>
+                  <option value="Nulo">Nulo</option>
                   <option value="Basico">Básico</option>
                   <option value="Intermediario">Intermediário</option>
                   <option value="Avancado">Avançado</option>
@@ -81,6 +136,8 @@
                   type="checkbox"
                   class="form-check-input"
                   id="politicaPrivacidade"
+                  name="politicaPrivacidade"
+                  required
                 />
                 <label
                   class="form-check-label mb-2 politica-privacidade"
@@ -99,6 +156,358 @@
       </div>
     </header>
 
+    <section class="para-quem-section">
+      <div class="para-quem-container">
+        <!-- Imagem à esquerda -->
+        <div class="para-quem-image">
+          <img
+            src="./assets/Homepage.png"
+            alt="Imagem Para Quem"
+            class="img-bleed"
+          />
+        </div>
+
+        <!-- Texto à direita -->
+        <div class="para-quem-content">
+          <h2 class="para-quem-title">Para quem?</h2>
+          <div class="title-underline"></div>
+          <ul class="para-quem-list">
+            <li>Interessados em aprender inglês</li>
+            <li>
+              Estudantes universitários ou profissionais que precisam melhorar
+              seu inglês para o mercado de trabalho
+            </li>
+            <li>Profissionais que se querem destacar no mercado</li>
+            <li>
+              Estudantes do Ensino Básico, Secundário ou universitário que
+              necessitam reforçar o idioma
+            </li>
+            <li>
+              Pais que querem oferecer aos filhos educação em inglês de
+              qualidade
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vantagens do Curso -->
+    <section class="vantagens-do-curso">
+      <div class="vantagens-container">
+        <h2 class="vantagens-title"><span>Vantagens</span> do curso</h2>
+        <div class="title-underline"></div>
+        <div class="vantagens-grid">
+          <!-- Ícone 1 -->
+          <div class="vantagem-item">
+            <img src="./assets/icon1.svg" alt="Acompanhamento permanente" />
+            <p>Acompanhamento permanente</p>
+          </div>
+          <!-- Ícone 2 -->
+          <div class="vantagem-item">
+            <img src="./assets/icon2.svg" alt="Acesso 24/7 à plataforma" />
+            <p>Acesso 24/7 a aulas e atividades</p>
+          </div>
+          <!-- Ícone 3 -->
+          <div class="vantagem-item">
+            <img src="./assets/icon3.svg" alt="Aulas interativas" />
+            <p>Lições interativas</p>
+          </div>
+          <!-- Ícone 4 -->
+          <div class="vantagem-item">
+            <img src="./assets/icon4.svg" alt="Horários flexíveis" />
+            <p>Horários flexíveis</p>
+          </div>
+          <!-- Ícone 5 -->
+          <div class="vantagem-item">
+            <img src="./assets/icon5.svg" alt="Resultados garantidos" />
+            <p>Resultados garantidos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- O que dizem os nossos alunos -->
+    <section class="testimonials py-5">
+      <div class="container">
+        <h2 class="section-title typewriter">
+          O que dizem <span>os nossos alunos</span>
+        </h2>
+        <div class="title-underline"></div>
+
+        <!-- Carrossel Desktop: 2 por slide -->
+        <div
+          id="testimonialDesktopCarousel"
+          class="carousel slide desktop-carousel"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-6 testimonial-container mb-4">
+                  <!-- testemunho 1 -->
+                  <img
+                    src="./assets/testi1.png"
+                    alt="Aspas"
+                    class="quote-icon"
+                  />
+                  <div class="testimonial-content">
+                    <p class="testimonial-text">
+                      “Sentia que o inglês era uma lacuna e então escolhi a
+                      Speak up porque me permite ter aulas on-line, onde e
+                      quando quiser. Com as aulas multimédia posso estudar
+                      sempre que o tempo livre surge e depois contactar com os
+                      professores sempre disponíveis para me auxiliar nas minhas
+                      dúvidas. Estou imensamente satisfeita com a escola e já
+                      vou no segundo nível de estudo com eles.”
+                    </p>
+                    <p class="testimonial-author">
+                      <strong>Daniela Costa</strong>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 testimonial-container mb-4">
+                  <!-- testemunho 2 -->
+                  <img
+                    src="./assets/testi2.png"
+                    alt="Aspas"
+                    class="quote-icon"
+                  />
+                  <div class="testimonial-content">
+                    <p class="testimonial-text">
+                      "A razão pela qual decidi inscrever-me nas aulas de inglês
+                      foi para me tornar fluente nessa língua, contudo como
+                      alguém que tem uma agenda preenchida era difícil encontrar
+                      uma escola que pudesse frequentar. Quando conheci o Speak
+                      Up percebi que finalmente poderia assistir às aulas, pois
+                      estas são marcadas sempre de acordo com a minha
+                      disponibilidade. Além disso, o Speak Up valoriza a prática
+                      da fala, que penso ser a razão pela qual evoluí tão
+                      rapidamente. Agora sinto-me muito mais fluente e raramente
+                      tenho aquelas situações de “brain freeze” quando estou a
+                      falar ou a escrever. O Speak Up é ótimo porque adapta as
+                      suas aulas aos nossos horários, ritmo de aprendizagem e
+                      dificuldades. Não podia estar mais feliz com a minha
+                      decisão."
+                    </p>
+                    <p class="testimonial-author"><strong>Ana Cunha</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-6 testimonial-container mb-4">
+                  <!-- testemunho 3 -->
+                  <img
+                    src="./assets/testi1.png"
+                    alt="Aspas"
+                    class="quote-icon"
+                  />
+                  <div class="testimonial-content">
+                    <p class="testimonial-text">
+                      “Sentia que o inglês era uma lacuna e então escolhi a
+                      Speak up porque me permite ter aulas on-line, onde e
+                      quando quiser. Com as aulas multimédia posso estudar
+                      sempre que o tempo livre surge e depois contactar com os
+                      professores sempre disponíveis para me auxiliar nas minhas
+                      dúvidas. Estou imensamente satisfeita com a escola e já
+                      vou no segundo nível de estudo com eles.”
+                    </p>
+                    <p class="testimonial-author">
+                      <strong>Daniela Costa</strong>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 testimonial-container mb-4">
+                  <!-- testemunho 4 -->
+                  <img
+                    src="./assets/testi2.png"
+                    alt="Aspas"
+                    class="quote-icon"
+                  />
+                  <div class="testimonial-content">
+                    <p class="testimonial-text">
+                      "A razão pela qual decidi inscrever-me nas aulas de inglês
+                      foi para me tornar fluente nessa língua, contudo como
+                      alguém que tem uma agenda preenchida era difícil encontrar
+                      uma escola que pudesse frequentar. Quando conheci o Speak
+                      Up percebi que finalmente poderia assistir às aulas, pois
+                      estas são marcadas sempre de acordo com a minha
+                      disponibilidade. Além disso, o Speak Up valoriza a prática
+                      da fala, que penso ser a razão pela qual evoluí tão
+                      rapidamente. Agora sinto-me muito mais fluente e raramente
+                      tenho aquelas situações de “brain freeze” quando estou a
+                      falar ou a escrever. O Speak Up é ótimo porque adapta as
+                      suas aulas aos nossos horários, ritmo de aprendizagem e
+                      dificuldades. Não podia estar mais feliz com a minha
+                      decisão."
+                    </p>
+                    <p class="testimonial-author"><strong>Ana Cunha</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Indicadores para o carrossel Desktop -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#testimonialDesktopCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialDesktopCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+          </div>
+        </div>
+
+        <!-- Carrossel Mobile: exibindo 1 testemunho por slide -->
+        <div
+          id="testimonialMobileCarousel"
+          class="carousel slide mobile-carousel"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <!-- Cada slide com 1 testemunho -->
+            <div class="carousel-item active">
+              <div class="testimonial-container">
+                <img src="./assets/testi1.png" alt="Aspas" class="quote-icon" />
+                <div class="testimonial-content">
+                  <p class="testimonial-text">
+                    “Sentia que o inglês era uma lacuna e então escolhi a Speak
+                    up porque me permite ter aulas on-line, onde e quando
+                    quiser. Com as aulas multimédia posso estudar sempre que o
+                    tempo livre surge e depois contactar com os professores
+                    sempre disponíveis para me auxiliar nas minhas dúvidas.
+                    Estou imensamente satisfeita com a escola e já vou no
+                    segundo nível de estudo com eles.”
+                  </p>
+                  <p class="testimonial-author">
+                    <strong>Daniela Costa</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-container">
+                <img src="./assets/testi2.png" alt="Aspas" class="quote-icon" />
+                <div class="testimonial-content">
+                  <p class="testimonial-text">
+                    "A razão pela qual decidi inscrever-me nas aulas de inglês
+                    foi para me tornar fluente nessa língua, contudo como alguém
+                    que tem uma agenda preenchida era difícil encontrar uma
+                    escola que pudesse frequentar. Quando conheci o Speak Up
+                    percebi que finalmente poderia assistir às aulas, pois estas
+                    são marcadas sempre de acordo com a minha disponibilidade.
+                    Além disso, o Speak Up valoriza a prática da fala, que penso
+                    ser a razão pela qual evoluí tão rapidamente. Agora sinto-me
+                    muito mais fluente e raramente tenho aquelas situações de
+                    “brain freeze” quando estou a falar ou a escrever. O Speak
+                    Up é ótimo porque adapta as suas aulas aos nossos horários,
+                    ritmo de aprendizagem e dificuldades. Não podia estar mais
+                    feliz com a minha decisão."
+                  </p>
+                  <p class="testimonial-author"><strong>Ana Cunha</strong></p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-container">
+                <img src="./assets/testi1.png" alt="Aspas" class="quote-icon" />
+                <div class="testimonial-content">
+                  <p class="testimonial-text">
+                    “Sentia que o inglês era uma lacuna e então escolhi a Speak
+                    up porque me permite ter aulas on-line, onde e quando
+                    quiser. Com as aulas multimédia posso estudar sempre que o
+                    tempo livre surge e depois contactar com os professores
+                    sempre disponíveis para me auxiliar nas minhas dúvidas.
+                    Estou imensamente satisfeita com a escola e já vou no
+                    segundo nível de estudo com eles.”
+                  </p>
+                  <p class="testimonial-author">
+                    <strong>Daniela Costa</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-container">
+                <img src="./assets/testi2.png" alt="Aspas" class="quote-icon" />
+                <div class="testimonial-content">
+                  <p class="testimonial-text">
+                    "A razão pela qual decidi inscrever-me nas aulas de inglês
+                    foi para me tornar fluente nessa língua, contudo como alguém
+                    que tem uma agenda preenchida era difícil encontrar uma
+                    escola que pudesse frequentar. Quando conheci o Speak Up
+                    percebi que finalmente poderia assistir às aulas, pois estas
+                    são marcadas sempre de acordo com a minha disponibilidade.
+                    Além disso, o Speak Up valoriza a prática da fala, que penso
+                    ser a razão pela qual evoluí tão rapidamente. Agora sinto-me
+                    muito mais fluente e raramente tenho aquelas situações de
+                    “brain freeze” quando estou a falar ou a escrever. O Speak
+                    Up é ótimo porque adapta as suas aulas aos nossos horários,
+                    ritmo de aprendizagem e dificuldades. Não podia estar mais
+                    feliz com a minha decisão."
+                  </p>
+                  <p class="testimonial-author"><strong>Ana Cunha</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Indicadores para o carrossel Mobile -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#testimonialMobileCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialMobileCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialMobileCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialMobileCarousel"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-text">
+          <h3>Teste já o seu Inglês</h3>
+          <p>
+            e descubra qual a melhor opção para iniciar o seu estudo connosco!
+          </p>
+        </div>
+        <button class="cta-button">Teste o seu Inglês</button>
+      </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
